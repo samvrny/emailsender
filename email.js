@@ -15,8 +15,6 @@ const transporter = nodemailer.createTransport({
 const workbook = xlsx.readFile('your_workbook_here');
 const worksheet = workbook.Sheets[workbook.SheetNames[0]];
 
-console.log(worksheet)
-
 // Convert worksheet to JSON
 const emailData = xlsx.utils.sheet_to_json(worksheet);
 
@@ -32,7 +30,8 @@ function sendPersonalizedEmail(email, name) {
         from: 'your_email_here',
         to: email,
         subject: 'Personalized Greeting',
-        text: `Hello, my name is ${name}.`
+        html: `<p>Hello, my name is ${name}.</p><a href="www.google.com">Visit Google.com</a>`
+        //text: `This is example text for an email. This is the way to include plain text without HTML in your email. Just comment out line 33 and uncomment this line, and add your personal greeting in place of this text`
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
