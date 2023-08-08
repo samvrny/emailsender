@@ -1,0 +1,15 @@
+{
+  "name": "emailgenerator",
+  "version": "1.0.0",
+  "description": "generate an email",
+  "main": "email.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^6.9.4",
+    "xlsx": "^0.18.5"
+  }
+}
